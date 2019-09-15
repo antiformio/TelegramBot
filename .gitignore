@@ -4,3 +4,4 @@ config.py
 venv
 .vscode
 __pycache__
+s3creds.py

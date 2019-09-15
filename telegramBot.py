@@ -5,6 +5,7 @@ import futebol
 import redditBiblioteca
 import requests
 import tempo
+import ligaRecord
 
 # The main URL for the Telegram API with our bot's token
 BASE_URL = "https://api.telegram.org/bot{}".format(config.bot_token)
@@ -33,6 +34,8 @@ def handle_message(message, chat_id):
     elif "/bolasemana" in message:
         data = futebol.request()
         message = futebol.jogosSemana(data)
+    elif "/liga" in message:
+        message = ligaRecord.reduceTableDetails(ligaRecord.getTabela())
     elif "/help" in message:
         message = (
             "*Comandos:*\n\n"
@@ -73,7 +76,7 @@ def send_message(message, chat_id):
 def send_keyboard(chat_id):
     """Send the keyboard to the Telegram chat defined by chat_id"""
     text = "Opções"
-    reply_markup = {"keyboard": [["/bolasemana", "/bolahoje"], ["/tempo"], ["/livros"]]}
+    reply_markup = {"keyboard": [["/bolasemana", "/bolahoje"], ["/tempo"], ["/livros"], ["/liga"]]}
     data = {"chat_id": chat_id, "text": text, "reply_markup": json.dumps(reply_markup)}
     url = BASE_URL + "/sendMessage"
     try:
