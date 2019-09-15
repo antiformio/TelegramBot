@@ -43,7 +43,7 @@ def handle_message(message, chat_id):
         )
         send_keyboard(chat_id)
     else:
-        message = "Desculpe... Não conheço esse comando!\n\nEscreva */help* para obter a lista de comandos!\n"
+        message = "Comando desconhecido...\n\nEscreva */help* para obter a lista de comandos!\n"
     return message
 
 
