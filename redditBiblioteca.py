@@ -2,7 +2,6 @@ import re
 
 import requests
 
-
 def pedido():
     """ Request """
     response = requests.get(
