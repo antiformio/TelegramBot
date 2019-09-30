@@ -39,11 +39,11 @@ def handle_message(message, chat_id):
     elif "/help" in message:
         message = (
             "*Comandos:*\n\n"
+            "*/liga* - Classificação liga record\n"
             "*/tempo* - Retorna o tempo em Barcelona por 5 dias.\n"
             "*/livros* - Lista de livros novos no /r/biblioteca\n"
             "*/bolahoje* - Jogos de Hoje\n"
-            "*/bolasemana* - Jogos da semana\n"
-            "*/liga* - Classificação liga record\n"
+            "*/bolasemana* - Jogos da semana\n"           
         )
         send_keyboard(chat_id)
     else:
