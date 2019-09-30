@@ -43,6 +43,7 @@ def handle_message(message, chat_id):
             "*/livros* - Lista de livros novos no /r/biblioteca\n"
             "*/bolahoje* - Jogos de Hoje\n"
             "*/bolasemana* - Jogos da semana\n"
+            "*/liga* - Classificação liga record\n"
         )
         send_keyboard(chat_id)
     else:
